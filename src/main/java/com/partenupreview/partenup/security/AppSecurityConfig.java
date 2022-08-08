@@ -29,6 +29,7 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .addFilter(new JwtUsernameEPassAuthFilter(authenticationManager()))
                 .authorizeRequests()
-                .antMatchers("/", "index").permitAll().anyRequest().authenticated();
+                .antMatchers("/auth/**").permitAll()
+                .anyRequest().authenticated();
     }
 }

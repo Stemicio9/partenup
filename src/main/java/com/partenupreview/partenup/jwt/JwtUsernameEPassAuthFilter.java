@@ -48,6 +48,6 @@ public class JwtUsernameEPassAuthFilter extends UsernamePasswordAuthenticationFi
                 .setIssuedAt(new Date()).setExpiration(java.sql.Date.valueOf(LocalDate.now().plusDays(3)))
                 .signWith(Keys.hmacShaKeyFor(key.getBytes())).compact();
 
-        response.addHeader("Autorizzazione", "Bearer " + token);
+        response.addHeader("Authorization", "Bearer " + token);
     }
 }

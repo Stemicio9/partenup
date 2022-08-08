@@ -2,7 +2,7 @@ package com.partenupreview.partenup.jwt;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
-import jdk.internal.joptsimple.internal.Strings;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -14,12 +14,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+@Configuration
 public class JwtTokenVerifier extends OncePerRequestFilter {
+
+
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        String authorizzatioHeader = request.getHeader("Autorizzazione");
-        if (Strings.isNullOrEmpty(authorizzatioHeader) || !authorizzatioHeader.startsWith("Bearer ")){
+
+        String authorizzatioHeader = request.getHeader("Authorization");
+        if (authorizzatioHeader == null || authorizzatioHeader.isEmpty()|| !authorizzatioHeader.startsWith("Bearer ")){
             filterChain.doFilter(request, response);
             return;
         }
