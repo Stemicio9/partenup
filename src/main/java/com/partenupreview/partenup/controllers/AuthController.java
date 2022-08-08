@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 public class AuthController {
 
 
+
+    // @todo da utilizzare per avere un token
     @PostMapping("login")
     public boolean login(@RequestBody UsernameAndPasswordAuthRequest request){
         return true;
