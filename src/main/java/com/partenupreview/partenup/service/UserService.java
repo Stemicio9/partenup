@@ -13,7 +13,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Service
-public class UserService{
+public class UserService implements UserDetailsService{
 
 
      @Autowired
@@ -74,11 +74,10 @@ public class UserService{
         return result;
     }
 
-
-    public boolean ciao(){
-        return true;
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+         // PROVA DI STEFANO
+        System.out.println("ESEGUO IL LOAD BY USERNAME");
+        return userDbRepository.findByUsername(username);
     }
-
-
-
 }
