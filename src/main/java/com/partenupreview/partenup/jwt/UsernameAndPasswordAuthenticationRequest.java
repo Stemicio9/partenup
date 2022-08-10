@@ -1,10 +1,11 @@
 package com.partenupreview.partenup.jwt;
 
-public class UsernameAndPasswordAuthRequest {
+public class UsernameAndPasswordAuthenticationRequest {
+
     private String username;
     private String password;
 
-    public UsernameAndPasswordAuthRequest() {
+    public UsernameAndPasswordAuthenticationRequest() {
     }
 
     public String getUsername() {

@@ -1,7 +1,7 @@
 package com.partenupreview.partenup.controllers;
 
-import com.partenupreview.partenup.dto.OurUser;
-import com.partenupreview.partenup.service.UserService;
+import com.partenupreview.partenup.user.OurUser;
+import com.partenupreview.partenup.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

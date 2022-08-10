@@ -1,6 +1,6 @@
 package com.partenupreview.partenup.controllers;
 
-import com.partenupreview.partenup.jwt.UsernameAndPasswordAuthRequest;
+import com.partenupreview.partenup.jwt.UsernameAndPasswordAuthenticationRequest;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -11,7 +11,7 @@ public class AuthController {
 
     // @todo da utilizzare per avere un token
     @PostMapping("login")
-    public boolean login(@RequestBody UsernameAndPasswordAuthRequest request){
+    public boolean login(@RequestBody UsernameAndPasswordAuthenticationRequest request){
         return true;
     }
 

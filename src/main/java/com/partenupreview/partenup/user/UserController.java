@@ -1,8 +1,6 @@
-package com.partenupreview.partenup.controllers;
+package com.partenupreview.partenup.user;
 
-import com.partenupreview.partenup.dto.OurUser;
-import com.partenupreview.partenup.entities.UserDb;
-import com.partenupreview.partenup.service.UserService;
+import com.partenupreview.partenup.userdb.UserDb;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -49,11 +47,5 @@ public class UserController {
         return null;
     }
 
-
-
-    @PostMapping("login")
-    public boolean login(@RequestBody OurUser user){
-         return userService.login(user);
-    }
 
 }

@@ -1,8 +1,7 @@
-package com.partenupreview.partenup.service;
+package com.partenupreview.partenup.user;
 
-import com.partenupreview.partenup.dto.OurUser;
-import com.partenupreview.partenup.entities.UserDb;
-import com.partenupreview.partenup.repository.UserDbRepository;
+import com.partenupreview.partenup.userdb.UserDb;
+import com.partenupreview.partenup.userdb.UserDbRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -26,24 +25,6 @@ public class UserService implements UserDetailsService{
          try{
              userDbRepository.save(daSalvare);
              return true;
-         }catch(Exception e){
-             e.printStackTrace();
-             return false;
-         }
-     }
-
-
-
-     public boolean login(OurUser user){
-         try{
-             UserDb dbuser = userDbRepository.findByUsername(user.getUsername());
-
-             if(dbuser.getPassword().equals(user.getPassword())){
-
-                 return true;
-             }
-
-             return false;
          }catch(Exception e){
              e.printStackTrace();
              return false;

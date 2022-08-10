@@ -1,7 +1,7 @@
-package com.partenupreview.partenup.dto;
+package com.partenupreview.partenup.user;
 
 
-import com.partenupreview.partenup.entities.UserDb;
+import com.partenupreview.partenup.userdb.UserDb;
 
 public class OurUser {
 

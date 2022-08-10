@@ -1,6 +1,5 @@
-package com.partenupreview.partenup.repository;
+package com.partenupreview.partenup.userdb;
 
-import com.partenupreview.partenup.entities.UserDb;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
