@@ -1,4 +1,4 @@
-package com.partenupreview.partenup.userdb;
+package com.partenupreview.partenup.user;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import java.util.Collection;
 
 @Entity
-public class UserDb implements UserDetails {
+public class User implements UserDetails {
 
 
     @Id

@@ -1,8 +1,6 @@
 package com.partenupreview.partenup.user;
 
 
-import com.partenupreview.partenup.userdb.UserDb;
-
 public class OurUser {
 
 
@@ -35,8 +33,8 @@ public class OurUser {
     }
 
 
-    public static UserDb fromOurUser(OurUser user){
-        UserDb result = new UserDb();
+    public static User fromOurUser(OurUser user){
+        User result = new User();
         result.setUsername(user.getUsername());
         result.setPassword(user.getPassword());
         return result;

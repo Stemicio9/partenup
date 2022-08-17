@@ -1,6 +1,8 @@
-package com.partenupreview.partenup.user;
+package com.partenupreview.partenup.controllers;
 
-import com.partenupreview.partenup.userdb.UserDb;
+import com.partenupreview.partenup.user.OurUser;
+import com.partenupreview.partenup.user.User;
+import com.partenupreview.partenup.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +19,7 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("all")
-    public List<UserDb> listAllUser(){
+    public List<User> listAllUser(){
         return userService.findAllUser();
     }
 
@@ -36,7 +38,7 @@ public class UserController {
 
 
     @GetMapping("filter")
-    public List<UserDb> findAllByUsernameContains(@PathParam("filter") String filter){
+    public List<User> findAllByUsernameContains(@PathParam("filter") String filter){
         return userService.findAllByUserNameContains(filter);
     }
 
